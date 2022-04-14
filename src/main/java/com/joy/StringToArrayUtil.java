@@ -1,8 +1,5 @@
 package com.joy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class StringToArrayUtil {
 
     /**
@@ -11,13 +8,11 @@ public class StringToArrayUtil {
      */
     public static int[] parseArray(String args) {
         int[] result = new int[0];
-//        List<Integer> result = new ArrayList<>();
         try {
             args = args.replaceAll(" ","");
             result = new int[args.length()];
             for(int i=0; i<args.length();i++){
                 result[i] = Integer.parseInt(args.charAt(i)+"");
-//                result.add(Integer.parseInt(args.charAt(i)+"") );
             }
         }catch (Exception e){
             result = null;
