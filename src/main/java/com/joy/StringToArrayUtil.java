@@ -7,14 +7,15 @@ public class StringToArrayUtil {
      * if it occurs Exception then return null
      */
     public static int[] parseArray(String args) {
-        int[] result = new int[0];
+        int[] result;
         try {
-            args = args.replaceAll(" ","");
-            result = new int[args.length()];
-            for(int i=0; i<args.length();i++){
-                result[i] = Integer.parseInt(args.charAt(i)+"");
+            String[] arr = args.trim().split(" ");
+            final int SIZE = arr.length;
+            result = new int[SIZE];
+            for (int i = 0; i < SIZE; i++) {
+                result[i] = Integer.parseInt(arr[i]);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             result = null;
         }
 
